@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #A{
+            text-align: center;
+            text-decoration: underline;
+            text-transform: capitalize;
+            text-overflow: ellipsis;
+            text-shadow: 20px 1px 19px;
+            box-shadow: 10px 10px 10px;
+            color: brown;
+            text-anchor: start;
+            border-color: burlywood;
+        } 
+    </style>
+</head>
+<body>
+    <hr>
+    <h1 id="A">Conversation Between Dog and Cat (.^.)</h1>
+    <br>
+    <hr>
+    <br>
+    <h3 style="text-decoration: underline;">Dog :-</h3>
+  <p id="hello"></p>
+  <hr>
+  <h3 style="text-decoration: underline;">Cat:-</h3>
+  <p id="hi"></p>
+  <p id="How Are you"></p>
+  <hr>
+
+  <script>
+    class Student {
+      constructor(name) {
+        this.studentname = name;
+      }
+      static hello() {  // static method
+        return "Hello!!" ;
+      }
+      static welcome(x) {
+        return "How Are you " + x.studentname;
+      }
+      hi() {
+      return "Hi " + this.studentname;
+      }
+    }
+    myname = new Student("Dog");
+    //Call 'hello()' on the class Student and NOT on the 'myname' object because 'hello()' is a static method it cannot access object
+    document.getElementById("hello").innerHTML = Student.hello();
+    // Call 'hi()' on the 'myname' object:
+    document.getElementById("hi").innerHTML = myname.hi();
+    // Call 'welcome()' can access the object since parameter is passed
+    document.getElementById("How Are you").innerHTML = Student.welcome(myname);
+  </script>
+  <h3 style="text-decoration: underline;">Dog :-</h3><p>i am fine</p>
+  <p id="ShowOff"></p>
+  <script>
+      class car {
+          constructor(brand) {
+              this.carname = brand;
+          }
+          present() {
+              return 'I have a ' + this.carname;
+          }
+      }
+      class Model extends car {
+          constructor(brand, mod) {
+              super(brand);
+              this.model = mod;
+          }
+          show() {
+              return this.present() + ', Which is a '+ this.model;
+          }
+      }
+      let urcar = new Model("Rolls-Royce", "Limosine");
+      document.getElementById("ShowOff").innerHTML = urcar.show();
+  </script>
+  <hr>
+  <h3 style="text-decoration: underline;">Cat:-</h3>
+  <p>So cheap</p>
+  <p>I have a Private Jet Which is made up of Pure Gold</p>
+  <hr>
+</body>
+</html>
